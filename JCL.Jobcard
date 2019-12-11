@@ -1,2 +1,2 @@
-//JBARROW1 JOB ACCT,'Jackson',MSGLEVEL(1,1),CLASS=A,
-//             MSGCLASS=X,NOTIFY=&SYSUID
+//JBARROW1 JOB ACCT,'Jackson',MSGLEVEL(1,1),CLASS=A,     #Defines Job Name, Types of System and JCL Messages, and job class parameter
+//             MSGCLASS=X,NOTIFY=&SYSUID                 #Defines output for messages and notification of current user of job completion

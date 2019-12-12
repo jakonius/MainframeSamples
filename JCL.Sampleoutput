@@ -1,0 +1,12 @@
+//JBARROW2 JOB ACCT,'Jackson',MSGLEVEL(1,1),CLASS=A,     
+//             MSGCLASS=X,NOTIFY=&SYSUID
+//S1       EXEC PGM=IEBGENER                                           #Execute operation to invoke IEBGENER
+//SYSPRINT DD SYSOUT=*                                                 #Sets system output to default CLASS=A
+//SYSUT1   DD *                                                        #Indicates instream data set to follow.
+1.         USA
+2.         Canada
+3.         Mexico
+//SYSUT2   DD DSN=JBARROW2.NACOUNTRY.DATA,DISP=(,CATLG),               #Data Set Name, Data set disposition to create new catalog data set.
+//            UNIT=SYSDA,SPACE=(TRK,(2,1)),                            #Specifies Storage Location and Size of Records
+//            DCB=(LRECL=80,BLKSIZE=0,RECFM=FB)                        #Specifies Data Control Block sequential fixed block with
+//SYSIN    DD DUMMY                                                     Record length to be 80

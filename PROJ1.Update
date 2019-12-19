@@ -1,0 +1,12 @@
+##### SAMPLE JCL that increases generation from an existing data set.  
+##### Update tempjob.prog1.data with relevant quarter information then submit this JCL. 
+ 
+ 000100 //TEMPJOB   JOB 0,'JACKSON',CLASS=A,MSGCLASS=X,
+ 000200 //         MSGLEVEL=(1,1),NOTIFY=&SYSUID
+ 000300 //STEP1    EXEC PGM=IEBGENER
+ 000400 //SYSPRINT DD SYSOUT=*
+ 000500 //SYSUT1   DD DSN=TEMPJOB.PROG1.DATA,DISP=SHR
+ 000940 //SYSUT2   DD DSN=TEMPJOB.PROG1.GDG.DATA(+1),DISP=(NEW,CATLG),
+ 001000 //            UNIT=SYSDA,SPACE=(TRK,(2,1)),
+ 001100 //            DCB=(BLKSIZE=0,LRECL=80,RECFM=FB)
+ 001200 //SYSIN    DD DUMMY

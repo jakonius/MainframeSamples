@@ -1,0 +1,8 @@
+******PROJECT 1 SCOPE*******
+##Project 1 is a series of JCL scripts that are intended to be used to update and retain quarterly information for the past years. 
+##A Generational Data set is created with a limit of 4 called TEMPDATA.PROG1.GDG.DATA.  It is specified with NOEMPTY and SCRATCH Parameters.
+##Data Set called TEMPDATA.PROJ1.DATA is created and updated when new quarterly information has been received. 
+##After TEMPDATA.PROJ1.DATA has been updated the UPDATE member of TEMPDATA.PROJ1.CNTL is run to add a new generation and remove the oldest data set.
+##Upon completion run the COMBINE Member of TEMPDATA.PROJ.CNTL.
+##COMBINE will grabe the most recent 4 generations and sort them numerically to output to TEMPDATA.PROJ1.COMBINE.DATA.
+##TEMPDATA.PROJ1.COMBINE.DATA will display the best results by month. 
